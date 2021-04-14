@@ -1,6 +1,9 @@
 <template>
   <div class="container">
     <div>
+      <SideNav />
+    </div>
+    <div>
       <h1 class="title">
         Zenn-app
       </h1>
@@ -18,12 +21,17 @@
 </template>
 
 <script>
+import SideNav from '../components/SideNav.vue'
+
 export default {
   data() {
     return {
       subTitle: 'Zenn is good service!!',
       tasks: []
     }
+  },
+  components:{
+    SideNav
   },
   methods: {
     async getSomething() {
