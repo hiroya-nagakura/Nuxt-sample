@@ -1,6 +1,7 @@
 
 export default {
   telemetry: false,
+  components: true,
   server: {
     host: '0.0.0.0'
   },
