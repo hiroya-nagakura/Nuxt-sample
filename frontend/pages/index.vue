@@ -4,18 +4,7 @@
       <Header />
     </div>
     <div>
-      <h1 class="title">
-        Zenn-app
-      </h1>
-      <h2 class="subtitle">
-        {{ subTitle }}
-      </h2>
-      <button @click="getSomething">
-        タスク取得
-      </button>
-      <ul v-for= 'task in tasks' :key = 'task.id'>
-        <li style = 'text-align: left;'>{{ task.title }}</li>
-      </ul>
+      <TopPage />
     </div>
     <div>
       <Footer />
