@@ -44,7 +44,8 @@ export default {
   */
   modules: [
     '@nuxtjs/axios',
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/auth'
   ],
   /*
   ** Build configuration
@@ -54,6 +55,23 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+    }
+  },
+  auth: {
+    redirect: {
+        login: '/users/login',
+        logout: '/',
+        callback: false,
+        home: '/users/profile',
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/api/v1/auth/login', method: 'post', propertyName: 'token' },
+          logout: { url: '/api/v1/auth/logout', method: 'post' },
+          user: false,
+        },
+      }
     }
   }
 }
