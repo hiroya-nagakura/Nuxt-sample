@@ -17,6 +17,9 @@
         <li style = 'text-align: left;'>{{ task.title }}</li>
       </ul>
     </div>
+    <div>
+      <Footer />
+    </div>
   </div>
 </template>
 
