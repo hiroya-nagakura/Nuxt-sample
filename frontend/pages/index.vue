@@ -1,7 +1,7 @@
 <template>
   <div class='top'>
+      <TopPageSearch  />
     <div class='top-contents'>
-      <TopPageSearch />
     </div>
   </div>
 </template>
