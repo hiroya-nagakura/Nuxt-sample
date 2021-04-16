@@ -31,39 +31,3 @@
     </b-form>
   </div>
 </template>
-
-<script>
-  export default {
-    data() {
-      return {
-        form: {
-          email: '',
-          password: '',
-        }
-      }
-    },
-    methods: {
-    // loginメソッドの呼び出し
-    async loginWithAuthModule() {
-      await this.$auth
-        .loginWith('local', {
-         // emailとpasswordの情報を送信
-          data: this.form
-        })
-        .then(
-          (response) => {
-            // レスポンスで返ってきた、認証に必要な情報をlocalStorageに保存
-            localStorage.setItem('access-token', response.headers['access-token'])
-            localStorage.setItem('client', response.headers.client)
-            localStorage.setItem('uid', response.headers.uid)
-            localStorage.setItem('token-type', response.headers['token-type'])
-            return response
-          },
-          (error) => {
-            return error
-          }
-        )
-      },
-    },
-  }
-</script>
