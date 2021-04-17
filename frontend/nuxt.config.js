@@ -57,18 +57,21 @@ export default {
     extend (config, ctx) {
     }
   },
+  axios: {
+    baseURL: 'http://localhost:5000/'
+  },
   auth: {
     redirect: {
         login: '/users/login',
         logout: '/',
         callback: false,
-        home: '/users/profile',
+        home: '/',
     },
     strategies: {
       local: {
         endpoints: {
-          login: { url: 'http://localhost:5000/api/v1/auth/sign_in', method: 'post', propertyName: 'token' },
-          logout: { url: 'http://localhost:5000/api/v1/auth/logout', method: 'post' },
+          login: { url: '/api/v1/auth/sign_in', method: 'post', propertyName: 'token' },
+          logout: { url: '/api/v1/auth/sign_out', method: 'delete' },
           user: false,
         },
       }
