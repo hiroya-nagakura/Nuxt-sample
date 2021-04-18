@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-form @submit="loginWithAuthModule">
+    <b-form @submit.prevent="loginWithAuthModule">
       <b-form-group
         id="input-group-1"
         label="Email address:"

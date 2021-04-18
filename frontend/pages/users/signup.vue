@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-form @submit="registerUser">
+    <b-form @submit.prevent="registerUser">
       <b-form-text>
         <h2>新規登録</h2>
       </b-form-text>
@@ -69,8 +69,13 @@
     },
     methods: {
       registerUser() {
-        this.$axios.post('http://localhost:5000/api/v1/auth', this.user).then((response) => {
-          window.location.href = '/users/comfirmation'
+        this.$axios.post('/api/v1/auth', this.user).then((response) => {
+          this.$auth.setUser(user)
+          localStorage.setItem('access-token', response.headers['access-token'])
+          localStorage.setItem('client', response.headers.client)
+          localStorage.setItem('uid', response.headers.uid)
+          localStorage.setItem('token-type', response.headers['token-type'])
+          window.location.href = '/'
         })
       },
     },
