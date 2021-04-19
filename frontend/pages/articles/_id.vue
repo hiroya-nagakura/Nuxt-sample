@@ -1,0 +1,34 @@
+<template>
+  <div>
+    <b-jumbotron :header="article.title" :lead='article.target_site'>
+      <p>
+        {{ article.content }}
+      </p>
+      <b-button variant="primary" href="/article/edit">Edit</b-button>
+      <b-button variant="danger" @click='deleteArticle'>Delete</b-button>
+    </b-jumbotron>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      article: [],
+    }
+  },
+  mounted() {
+    this.fetchArticle();
+  },
+  methods: {
+    async fetchArticle(){
+      const response = await this.$axios.$get(`/api/v1/articles/${this.$route.params['id']}`)
+      this.article = response.article
+    },
+    async deleteArticle(){
+      await this.$axios.$delete(`/api/v1/articles/${this.$route.params['id']}`)
+      window.location.href='/articles'
+    }
+  }
+}
+</script>
