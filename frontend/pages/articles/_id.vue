@@ -4,7 +4,7 @@
       <p>
         {{ article.content }}
       </p>
-      <b-button variant="primary" href="/article/edit">Edit</b-button>
+      <b-button variant="primary" @click='jumpPage'>Edit</b-button>
       <b-button variant="danger" @click='deleteArticle'>Delete</b-button>
     </b-jumbotron>
   </div>
@@ -28,6 +28,12 @@ export default {
     async deleteArticle(){
       await this.$axios.$delete(`/api/v1/articles/${this.$route.params['id']}`)
       window.location.href='/articles'
+    },
+    jumpPage() {
+      this.$router.push({
+      path: "/articles/edit",
+      query: { id: this.article.id }
+    });
     }
   }
 }
