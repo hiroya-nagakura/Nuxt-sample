@@ -17,7 +17,7 @@
             {{ article.content }}
           </b-card-text>
 
-          <b-button href="#" variant="primary">Go somewhere</b-button>
+          <b-button :href="'/articles/'+article.id" variant="primary">Go detail</b-button>
         </b-card>
       </b-col>
     </b-row>
