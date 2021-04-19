@@ -1,30 +1,28 @@
 <template>
-  <div class="container">
-    <div>
-      <Header />
-    </div>
-    <div>
-      <TopPage />
-    </div>
-    <div>
-      <Footer />
+  <div class='top'>
+    <div class='top-contents'>
+      <TopPageSearch />
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      subTitle: 'Zenn is good service!!',
-      tasks: []
-    }
-  },
-  methods: {
-    async getSomething() {
-      const response = await this.$axios.$get('http://localhost:5000/api/v1/tasks')
-      this.tasks = JSON.parse(response.tasks)
-    }
-  },
+<style scoped>
+.top{
+  background-image: url(~/assets/images/Top.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2em;
+  margin-top: -100px;
 }
-</script>
+.top-contents{
+  background-color: rgba(0,0,0,0.5);
+  width: 90%;
+  padding: 1em 1em;
+  border-radius: 2em;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <div>
     <b-row>
       <b-col cols=4
         v-for='article in articles' :key = 'article.id'
@@ -21,7 +21,7 @@
         </b-card>
       </b-col>
     </b-row>
-  </b-container>
+  </div>
 </template>
 
 <script>

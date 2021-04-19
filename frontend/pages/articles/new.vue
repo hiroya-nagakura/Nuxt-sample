@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <div>
     <b-form @submit.prevent='createArticle'>
       <b-form-group
         label='Title:'
@@ -37,7 +37,7 @@
         <b-button type="submit" variant="primary">Submit</b-button>
       </b-form-group>
     </b-form>
-  </b-container>
+  </div>
 </template>
 
 <script>
