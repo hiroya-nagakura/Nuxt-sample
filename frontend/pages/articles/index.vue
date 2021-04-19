@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     async fetchArticles() {
-      const response = await this.$axios.$get('http://localhost:5000/api/v1/articles')
+      const response = await this.$axios.$get('/api/v1/articles')
       this.articles = response.articles
     }
   }

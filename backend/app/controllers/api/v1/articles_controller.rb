@@ -12,7 +12,7 @@ class Api::V1::ArticlesController < ApplicationController
     if @article.save
       render json: @article
     else
-      render json: @article.errors
+      render json: @article.errors.full_messages, status: :unprocessable_entity
     end
   end
 
