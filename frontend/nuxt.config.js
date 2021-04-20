@@ -55,5 +55,8 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  axios: {
+    baseURL: 'http://localhost:5000'
   }
 }

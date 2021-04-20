@@ -35,8 +35,8 @@ export default {
 	data() {
 		return{
 			links: [
-				{title: 'メニュー一覧', href: '#'},
-				{title: 'メニュー投稿', href: '#'},
+				{title: 'メニュー一覧', href: '/articles'},
+				{title: 'メニュー投稿', href: '/articles/new'},
 				{title: 'トレーニング記録', href: '#'},
 				{title: '体重記録', href: '#'},
 			],
