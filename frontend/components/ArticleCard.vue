@@ -12,7 +12,7 @@
       {{ article.content }}
     </b-card-text>
 
-    <b-button :href="'/articles/'+article.id" variant="primary">Go detail</b-button>
+    <b-button :to="'/articles/'+article.id" variant="primary">Go detail</b-button>
   </b-card>
 </template>
 

@@ -4,7 +4,7 @@
       <p>
         {{ article.content }}
       </p>
-      <b-button variant="primary" @click='jumpPage'>Edit</b-button>
+      <b-button variant="primary" :to="'/articles/edit?id='+article.id">Edit</b-button>
       <b-button variant="danger" @click='deleteArticle'>Delete</b-button>
     </b-jumbotron>
   </div>
