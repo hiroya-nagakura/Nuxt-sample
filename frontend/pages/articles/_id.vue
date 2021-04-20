@@ -26,8 +26,10 @@ export default {
       this.article = response.article
     },
     async deleteArticle(){
-      await this.$axios.$delete(`/api/v1/articles/${this.$route.params['id']}`)
-      window.location.href='/articles'
+      if(confirm('Are you sure you want to delete')){
+        await this.$axios.$delete(`/api/v1/articles/${this.$route.params['id']}`)
+        window.location.href='/articles'
+      }
     },
     jumpPage() {
       this.$router.push({
