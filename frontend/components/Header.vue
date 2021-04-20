@@ -1,14 +1,18 @@
 <template>
 	<b-navbar toggleable="lg" type="dark" variant="dark">
-    <b-navbar-brand href="#">
-			<img src="~/assets/images/logo.png" alt="logo" class='header-logo'>
-		</b-navbar-brand>
+    <NuxtLink to='/'>
+      <b-navbar-brand>
+        <img src="~/assets/images/logo.png" alt="logo" class='header-logo'>
+      </b-navbar-brand>
+    </NuxtLink>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav v-for='link in links' :key='link.id' >
-        <b-nav-item :href='link.href'>{{ link.title }}</b-nav-item>
+        <b-nav-item :to='link.path'>
+            {{ link.title }}
+        </b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -35,10 +39,10 @@ export default {
 	data() {
 		return{
 			links: [
-				{title: 'メニュー一覧', href: '#'},
-				{title: 'メニュー投稿', href: '#'},
-				{title: 'トレーニング記録', href: '#'},
-				{title: '体重記録', href: '#'},
+				{title: 'メニュー一覧', path: '/articles'},
+				{title: 'メニュー投稿', path: '/articles/new'},
+				{title: 'トレーニング記録', path: '#'},
+				{title: '体重記録', path: '#'},
 			],
 			links2: [
 				{title: 'プロフィール' , href: '#'},
